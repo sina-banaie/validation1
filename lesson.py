@@ -26,14 +26,14 @@ def submit_click():
 def remove_click():
     selcted_item=table.focus()
     if not selcted_item:
-        print("you didnt select the item")
+        print("error")
         return
     table.delete(selcted_item)
     print("Deleted")
 def edit_click():
     selected_item=table.focus()
     if not selected_item:
-        print("you didnt select the item")
+        print("error")
         return
     table.item(selected_item,values=(code.get,title.get,teacher.get(),class_number.get(),unit.get()))
 def select_lessons(event):
@@ -118,6 +118,7 @@ table.heading(4,text="unit")
 
 table.bind(table.bind("<<TreeviewSelect>>",select_lessons))
 table.place(x=250, y=80)
+
 
 
 
